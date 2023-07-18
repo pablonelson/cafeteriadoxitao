@@ -66,7 +66,7 @@
         }
 
         .button {
-            padding: 10px 20px;
+            padding: 50px 10px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
@@ -102,7 +102,8 @@
             /*dropdow = Suspende o menú  */
             position: relative;
             display: inline-block;
-            width: 20%;
+            width: 35%;
+            
         }
 
         .dropdown-content {
@@ -120,11 +121,54 @@
             /*dropdow = Suspende o menú. Hover = Passa o Mouse */
             display: block;
         }
+
+        .barra {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .estilodeTexto{
+font-size: 20px;
+
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .botao {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+
+    .botao-personalizado {
+      width: 345px; /* Define a largura do botão em pixels */
+      height: 35px; /* Define a altura do botão em pixels */
+      font-size: 16px; /* Define o tamanho da fonte em pixels */font-size: 20px; /* Tamanho da fonte em pixels */
+      padding: 20x 5px; /* Espaçamento interno do botão (cima/baixo, esquerda/direita) em pixels */
+      line-height: 1.0;/*Ajustar o lugar onde a frase está */
+      border-radius: 40px;  /* Muda a borda */
+      color: rgb(22, 17, 17); /* Define a cor do texto dentro da borda*/
+      background-color: #c2742c; /* Define a cor da borda*/
+    }
+
     </style>
 
     <div class="dropdown">
 
-        <button onclick="toggleMenu()" class="coffee">Menú de café</button>
+        <div class="barra"><button onclick="toggleMenu()" class="coffee">Menú de café</button></div>>
         <div id="menu" class="dropdown-content">
 
             <table>
@@ -180,7 +224,7 @@
 
 
     <div class="dropdown">
-        <button onclick="toggleMenu()" class="coffee">Menú de Lanches</button>
+        <div class="barra"><button onclick="toggleMenu()" class="coffee">Menú de Lanches</button></div>>
         <div id="menu" class="dropdown-content">
 
             <table>
@@ -240,30 +284,72 @@
                 </tr>
 
             </table>
+
         </div>
     </div>
     </div>
 
-<h1>Menú de cafésㅤㅤㅤ</h1>
+    <div class="navbar">
+       
+      <div class="barra"> <div class="dropdown"></div>
+          
+           <div class="barra">  <div  class="dropdown-content"></div>
+           <div class="barra">   <h3 class="cafe">Escolher Produto</h3></div>
+           <div class="barra">  <button id="botao-produtos">&#9749;</button></div>
 
-    <script>
+                <div id="lista-produtos">
+                    <select id="select-produtos">
+                        <option value="">Selecione...</option><br>
+                        <option class="cafe" value="1°Café">Cardápio de Cafés</option>
+                        <option class="estilodeTexto" value="1°Café">1°Café</option>
+                        <option  class="estilodeTexto" value="2°Capuccino">2°Capuccino</option>
+                        <option   class="estilodeTexto" value="3°Café espresso">3°Café espresso</option>
+                        <option   class="estilodeTexto" value="4°Irish coffee">4°Irish coffee</option>
+                        <option  class="estilodeTexto" value="5°Caffè latte">5°Caffè latte</option>
+                        <option  class="estilodeTexto" value="6°Café macchiato">6°Café macchiato</option>
+                        <option  class="estilodeTexto" value="7°Café mocha">7°Café mocha</option>
+                        <option  class="estilodeTexto" value="8° Café duplo">8° Café duplo</option>
+                        <option  class="cafe" value="Escolha seu lanche">Cardápio de Lanches</option>
+                        <option  class="estilodeTexto" value="1°Beirute">1°Beirute</option>
+                        <option  class="estilodeTexto" value="2°X Churrasco com vinagrete">2°X Churrasco com vinagrete</option>
+                        <option  class="estilodeTexto"value="3°X Caboquinho">3°X Caboquinho</option>
+                        <option  class="estilodeTexto" value="4°Cachorro-quente nordestino">4°Cachorro-quente nordestino</option>
+                        <option  class="estilodeTexto" value="5°Carne Louca">5°Carne Louca</option>
+                        <option  class="estilodeTexto" value="6°Sanduíche de Pernil">6°Sanduíche de Pernil</option>
+                        <option  class="estilodeTexto" value="7°Sanduíche de Calabresa">7°Sanduíche de Calabresa</option>
+                        <option  class="estilodeTexto" value="8°Batata frita grande">8°Batata frita grande</option>
+                        <option  class="estilodeTexto" value="9°Batata frita média">9°Batata frita média</option>
+                        <option  class="estilodeTexto" value="10°Batata frita pequena">10°Batata frita pequena</option>
 
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
+                        <!-- Adicione mais opções de produtos aqui -->
+                    </select>
+                    <button id="botao-confirmar">Confirmar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('botao-produtos').addEventListener('click', function () {
+        document.getElementById('lista-produtos').style.display = 'block';
+    });
+
+    document.getElementById('botao-confirmar').addEventListener('click', function () {
+        var selectProdutos = document.getElementById('select-produtos');
+        var selectedProduto = selectProdutos.value;
+
+        if (selectedProduto) {
+            alert('Produto selecionado: ' + selectedProduto);
+            document.getElementById('lista-produtos').style.display = 'none';
+            selectProdutos.value = ''; // Reinicia a seleção do dropdown
+        } else {
+            alert('Por favor, selecione um produto.');
         }
+    });
 
-        function showMenu(menuId) {
-            var menu = document.getElementById(menuId);
-            if (menu.style.display === "none") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
-        }
+</script>
 
-        
-    </script>
 
 </body>
 
