@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria do xitaozinho compras</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="avaliação.css">
+  <link rel="stylesheet" type="text/css" href="index.html">
+  <link rel="stylesheet" type="text/css" href="menu copy.html">
+  <style>
+    body {
+      display: flex;
+      background-image: url(imagens/frente7.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 110px;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 54px;
+      margin-bottom: 20px;
+      color: #d8d51d;
+      border-style: double;
+      font-size: 20px 60px;
+      box-shadow: 8px 7px 7px rgba(15, 247, 235, 0.705);
+      border-color: rgba(230, 12, 12, 0.945);
+      border-width: medium;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    }
+
+    #lista-produtos {
+      display: none;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 30px;
+      background-color: #e9eeea;
+      color: rgb(20, 11, 11);
+      text-decoration: none;
+      border-radius: 10px;
+      margin-right: 30px;
+      border-color: #d7e606;
+      font-size: 19px;
+      text-shadow: 1px 1px 1px rgb(218, 5, 5);
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .menu {
+      text-align: center;
+      margin: 0 9px;
+    }
+
+    .coffee {
+      color: #111213;
+      border-style: double;
+      font-size: 20px 60px;
+      box-shadow: 8px 7px 7px rgba(15, 247, 235, 0.705);
+      border-color: rgba(230, 12, 12, 0.945);
+      border-width: medium;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px rgb(255, 209, 5);
+    }
+
+    .coffee2 {
+      color: #111213;
+      border-style: double;
+      font-size: 20px 60px;
+      box-shadow: 8px 7px 7px rgba(15, 247, 235, 0.705);
+      border-color: rgba(230, 12, 12, 0.945);
+      border-width: medium;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px rgb(255, 209, 5);
+    }
+
+
+    .for {
+      color: #111213;
+      border-style: double;
+      font-size: 20px 60px;
+      box-shadow: 8px 7px 7px rgba(15, 247, 235, 0.705);
+      border-color: rgba(17, 19, 19, 0.945);
+      border-width: medium;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px rgb(255, 209, 5);
+    }
+
+
+    .for2 {
+      color: #111213;
+      border-style: none;
+      font-size: 10px 60px;
+      border-width: 10%;
+      font-size: 17px;
+      text-shadow: 1px 1px 1px rgb(255, 209, 5);
+    }
+
+    .bebidasPrecos {
+      color: #111213;
+      font-size: 40px;
+      border-style: double;
+      box-shadow: 5px 6px 7px rgba(221, 230, 238, 0.5);
+      border-color: rgba(8, 7, 5, 0.945);
+      border-width: medium;
+      text-shadow: 1px 1px 2px rgb(255, 209, 5);
+    }
+
+    .h2 {
+
+      font-size: 18px;
+      border-style: double;
+      box-shadow: 5px 6px 7px rgba(221, 230, 238, 0.5);
+      border-color: rgba(226, 225, 224, 0.945);
+      border-width: medium;
+      text-shadow: 1px 1px 2px rgb(255, 209, 5);
+    }
+  </style>
+
+  <script>
+
+    function showMenu(menuId) {
+      var menu = document.getElementById(menuId);
+      if (menu.style.display === "none") {
+        menu.style.display = "block";
+      } else {
+        menu.style.display = "none";
+      }
+    }
+
+    function conectarbotao() {
+      var botao1 =
+        document.getElementById("botao1");
+      var botao2 =
+        document.getElementById("botao2");
+
+      botao1.addEventListener("click", function () {
+        botao2.innerHTML = botao1.innerHTML;
+      });
+    }
+
+    function selecionarConteudo(botaold) {
+      var botao =
+        document.getElementById(botaold);
+      var conteúdo = botao.innerHTML;
+      alert("Conteúdo do botão" + botaold + ":" + conteudo);
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <button class="coffee" id="botao-produtos">Escolher Produto</button>
+
+  <div id="lista-produtos">
+    <label for="select-produtos">Selecione um produto:</label>
+    <select id="select-produtos">
+      <option value="">Selecione...</option><br>
+      <option value="1°Café">1°Café</option>
+      <option value="2°Capuccino">2°Capuccino</option>
+      <option value="3°Café espresso">3°Café espresso</option>
+      <option value="4°Irish coffee">4°Irish coffee</option>
+      <option value="5°Caffè latte">5°Caffè latte</option>
+      <option value="6°Café macchiato">6°Café macchiato</option>
+      <option value="7°Café mocha">7°Café mocha</option>
+      <option value="8° Café duplo">8° Café duplo</option>
+      <option value="Escolha seu lanche">Cardápio de Lanches</option>
+      <option value="1°Beirute">1°Beirute</option>
+      <option value="2°X Churrasco com vinagrete">2°X Churrasco com vinagrete</option>
+      <option value="3°X Caboquinho">3°X Caboquinho</option>
+      <option value="4°Cachorro-quente nordestino">4°Cachorro-quente nordestino</option>
+      <option value="5°Carne Louca">5°Carne Louca</option>
+      <option value="6°Sanduíche de Pernil">6°Sanduíche de Pernil</option>
+      <option value="7°Sanduíche de Calabresa">7°Sanduíche de Calabresa</option>
+      <option value="8°Batata frita grande">8°Batata frita grande</option>
+      <option value="9°Batata frita média">9°Batata frita média</option>
+      <option value="10°Batata frita pequena">10°Batata frita pequena</option>
+     
+
+      <!-- Adicione mais opções de produtos aqui -->
+    </select>
+    <button id="botao-confirmar">Confirmar</button>
+  </div><br>
+
+  <div class="container">
+    <h1 class="title">Menu de Cafés</h1>
+    <div class="button-container">
+      <button class="button" onclick="showMenu('cafeMenu')">Café</button>
+      <button class="button" onclick="showMenu('lanchesMenu')">Lanches</button>
+    </div>
+    <div class="menu-container">
+      <div id="cafeMenu" class="menu" style="display: none;">
+        <p class="coffee">Cardápio de Cafés:</p>
+        <ul>
+          <table>
+
+            <tr>
+              <th class="bebidasPrecos">café</th>
+              <th class="bebidasPrecos">Preço</th>
+            </tr>
+            <tr>
+              <td class="for">1° Café</td>
+              <td class="for">R$ 3,50</td>
+            </tr>
+
+            <tr>
+              <td class="for">2° Capuccino</td>
+              <td class="for">R$ 5,00</td>
+            </tr>
+
+            <tr>
+              <td class="for">3° Café espresso</td>
+              <td class="for">R$ 2,00</td>
+            </tr>
+
+            <tr>
+              <td class="for">4° Irish coffee</td>
+              <td class="for">R$ 6,00</td>
+            </tr>
+
+            <tr>
+              <td class="for">5° Caffè latte</td>
+              <td class="for">R$ 5,50</td>
+            </tr>
+
+            <tr>
+              <td class="for">6° Café macchiato</td>
+              <td class="for">R$ 5,00</td>
+            </tr>
+
+            <tr>
+              <td class="for">7° Café mocha</td>
+              <td class="for">R$ 2,50</td>
+            </tr>
+
+
+            <tr>
+              <td class="for">8° Café duplo</td>
+              <td class="for">R$ 3,50</td>
+            </tr>
+
+
+          </table>
+
+      </div>
+    </div>
+  </div>
+  <ul>
+
+    </div>
+    <div id="lanchesMenu" class="menu" style="display: none;">
+      <p class="coffee">Cardápio de Lanches:</p>
+      <ul>
+
+        <table>
+
+          <tr>
+            <th class="bebidasPrecos">Lanche</th>
+            <th class="bebidasPrecos">Preço</th>
+          </tr>
+          <tr>
+            <td class="for">1°Beirute</td>
+            <td class="for">R$ 9,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">2°X Churrasco com vinagrete</td>
+            <td class="for">R$ 6,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">3° X Caboquinho</td>
+            <td class="for">R$ 4,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">4°Cachorro-quente nordestino</td>
+            <td class="for">R$ 7,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">5°Carne Louca</td>
+            <td class="for">R$ 5,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">6° Sanduíche de Pernil</td>
+            <td class="for">R$ 7,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">7° Sanduíche de Calabresa</td>
+            <td class="for">R$ 6,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">8° Batata frita grande</td>
+            <td class="for">R$ 8,50</td>
+          </tr>
+
+
+          <tr>
+            <td class="for">9° Batata frita média</td>
+            <td class="for">R$ 8,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">10° Batata frita pequena</td>
+            <td class="for">R$ 6,70</td>
+          </tr>
+
+        </table>
+    </div>
+    </div>
+    </div>
+
+
+    <form class="for2" action="http://127.0.0.1:5500/index.html">
+      <input class="for2" type="submit" value="Home" />
+    </form><br>
+
+    <form class="for2" action="http://127.0.0.1:5500/menu%20copy.html">
+      <input class="for2" type="submit" value="Menu de compra" />
+    </form><br>
+
+    <form class="for2" action="http://127.0.0.1:5500/Outro%20projeto/avaliaçoes.html">
+      <input class="for2" type="submit" value="avaliações" />
+    </form><br>
+    </div>
+    10°Batata frita pequena    
+    <script>
+      document.getElementById('botao-produtos').addEventListener('click', function () {
+        document.getElementById('lista-produtos').style.display = 'block';
+      });
+
+      document.getElementById('botao-confirmar').addEventListener('click', function () {
+        var selectProdutos = document.getElementById('select-produtos');
+        var selectedProduto = selectProdutos.value;
+
+        if (selectedProduto) {
+          alert('Produto selecionado: ' + selectedProduto);
+          document.getElementById('lista-produtos').style.display = 'none';
+          selectProdutos.value = ''; // Reinicia a seleção do dropdown
+        } else {
+          alert('Por favor, selecione um produto.');
+        }
+      });
+
+    </script>
+
+
+  </ul>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>

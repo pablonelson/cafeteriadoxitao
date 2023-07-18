@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url(imagens/menu3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .coffee {
+            color: #eb0606;
+            font-family: Georgia, 'arial', Times, serif;
+            font-size: 30px;
+            text-shadow: 2px 2px 4px rgba(42, 196, 4, 0.959);
+            border-color: rgba(14, 107, 71, 0.945);
+        }
+
+
+        .for {
+            color: #eb4f06;
+            border-style: double;
+            font-size: 20px 60px;
+            box-shadow: 5px 6px 7px rgba(6, 149, 245, 0.5);
+            border-color: rgba(14, 104, 107, 0.945);
+            border-width: medium;
+            text-shadow: 1px 1px 2px rgb(243, 149, 8);
+        }
+
+        .bebidaePreco {
+            color: #eb4f06;
+            font-size: 35px;
+            border-style: double;
+            box-shadow: 5px 6px 7px rgba(8, 168, 231, 0.5);
+            border-color: rgba(6, 84, 116, 0.945);
+            border-width: medium;
+            text-shadow: 1px 1px 2px rgb(240, 141, 12);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .menu {
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .cafe {
+            color: #eb0606;
+            font-family: Georgia, 'arial', Times, serif;
+            font-size: 20px;
+
+        }
+
+        .imagens {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown {
+            /*dropdow = Suspende o menú  */
+            position: relative;
+            display: inline-block;
+            width: 20%;
+        }
+
+        .dropdown-content {
+            /*dropdow = Suspende o menú  */
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 15px 17px;
+            z-index: 5;
+        }
+
+        .dropdown:hover .dropdown-content {
+            /*dropdow = Suspende o menú. Hover = Passa o Mouse */
+            display: block;
+        }
+    </style>
+
+    <div class="dropdown">
+
+        <button onclick="toggleMenu()" class="coffee">Menú de café</button>
+        <div id="menu" class="dropdown-content">
+
+            <table>
+                <tr>
+                    <th class="bebidaePreco">Bebida</th>
+                    <th class="bebidaePreco">Preço</th>
+                </tr>
+                <tr>
+                    <td class="for">Café</td>
+                    <td class="for">R$ 3,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Capuccino</td>
+                    <td class="for">R$ 5,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Café espresso</td>
+                    <td class="for">R$ 2,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Irish coffee</td>
+                    <td class="for">R$ 6,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Caffè latte</td>
+                    <td class="for">R$ 5,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Café macchiato</td>
+                    <td class="for">R$ 5,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Café mocha</td>
+                    <td class="for">R$ 2,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Café duplo</td>
+                    <td class="for">R$ 3,50</td>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="dropdown">
+        <button onclick="toggleMenu()" class="coffee">Menú de Lanches</button>
+        <div id="menu" class="dropdown-content">
+
+            <table>
+                <tr>
+                    <th class="bebidaePreco">Lanche</th>
+                    <th class="bebidaePreco">Preço</th>
+                </tr>
+                <tr>
+                    <td class="for">Beirute</td>
+                    <td class="for">R$ 9,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">X Churrasco com vinagrete</td>
+                    <td class="for">R$ 6,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">X Caboquinho</td>
+                    <td class="for">R$ 4,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Cachorro-quente nordestino</td>
+                    <td class="for">R$ 7,00</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Carne Louca</td>
+                    <td class="for">R$ 5,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Sanduíche de Pernil</td>
+                    <td class="for">R$ 7,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Sanduíche de Calabresa</td>
+                    <td class="for">R$ 6,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Batata frita grande</td>
+                    <td class="for">R$ 8,50</td>
+                </tr>
+
+
+                <tr>
+                    <td class="for">Batata frita média</td>
+                    <td class="for">R$ 8,50</td>
+                </tr>
+
+                <tr>
+                    <td class="for">Batata frita pequena
+                    <td class="for">R$ 6,70</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    </div>
+
+<h1>Menú de cafésㅤㅤㅤ</h1>
+
+    <script>
+
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function showMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+        
+    </script>
+
+</body>
+
+</html>
