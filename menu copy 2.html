@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url(imagens/frente7.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 50vh;
+            margin: 0;
+        }
+
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f2f2f2;
+            padding: 0px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .menu h2 {
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 5px;
+        }
+
+        
+.orderButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+        .cafe {
+            color: #eb0606;
+            font-family: Georgia, 'arial', Times, serif;
+            font-size: 20px;
+
+        }
+
+        .imagens {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown {
+            /*dropdow = Suspende o menú  */
+            position: relative;
+            display: inline-block;
+            width: 55%;
+
+        }
+
+        .dropdown-content {
+            /*dropdow = Suspende o menú  */
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 15px 17px;
+            z-index: 5;
+        }
+
+        .dropdown:hover .dropdown-content {
+            /*dropdow = Suspende o menú. Hover = Passa o Mouse */
+            display: block;
+        }
+
+        .barra {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .estilodeTexto {
+            font-size: 20px;
+
+        }
+
+        .hidden {
+            display: none;
+            /* Oculta o menu */
+        }
+
+        .menuButtonContainer {
+            position: relative;
+            display: inline-block;
+        }
+
+        #menuButton {
+            display: block;
+            width: 150px;
+            margin-bottom: 5px;
+        }
+
+        #menuContent {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 150px;
+            background-color: #f9f9f9;
+            padding: 5px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .menuContentVisible {
+            display: block;
+        }
+    </style>
+
+<div class="container">
+    <div class="menu">
+     
+     <button id="meuBotao" class="botao" onclick="showMenu('cafeMenu')">Café</button>
+   
+  <div class="botoes">
+    <div id="cafeMenu" class="menu" style="display: none;">
+      <p  class="content" class="coffee">Cardápio de Cafés:</p>
+      <ul>
+        <table>
+
+          <tr>
+            <th class="bebidasPrecos">café</th>
+            <th class="bebidasPrecos">Preço</th>
+          </tr>
+          <tr>
+            <td class="for">1° Café</td>
+            <td class="for">R$ 3,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">2° Capuccino</td>
+            <td class="for">R$ 5,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">3° Café espresso</td>
+            <td class="for">R$ 2,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">4° Irish coffee</td>
+            <td class="for">R$ 6,00</td>
+          </tr>
+          <tr>
+            <td class="for">5° Caffè latte</td>
+            <td class="for">R$ 5,50</td>
+          </tr>
+
+          <tr>
+            <td class="for">6° Café macchiato</td>
+            <td class="for">R$ 5,00</td>
+          </tr>
+
+          <tr>
+            <td class="for">7° Café mocha</td>
+            <td class="for">R$ 2,50</td>
+          </tr>
+
+
+          <tr>
+            <td class="for">8° Café duplo</td>
+            <td class="for">R$ 3,50</td>
+          </tr>
+
+        </table>
+    </div>
+  </div>
+</div>
+</div>
+<ul>
+
+</div>
+
+
+    <script>
+
+        function showMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+        function conectarbotao() {
+            var botao1 =
+                document.getElementById("botao1");
+            var botao2 =
+                document.getElementById("botao2");
+
+            botao1.addEventListener("click", function () {
+                botao2.innerHTML = botao1.innerHTML;
+            });
+        }
+
+        function selecionarConteudo(botaold) {
+            var botao =
+                document.getElementById(botaold);
+            var conteúdo = botao.innerHTML;
+            alert("Conteúdo do botão" + botaold + ":" + conteudo);
+        }
+
+    </script>
+
+
+    <script>
+        document.getElementById('botao-produtos').addEventListener('click', function () {
+            document.getElementById('lista-produtos').style.display = 'block';
+        });
+
+        document.getElementById('botao-confirmar').addEventListener('click', function () {
+            var selectProdutos = document.getElementById('select-produtos');
+            var selectedProduto = selectProdutos.value;
+
+            if (selectedProduto) {
+                alert('Produto selecionado: ' + selectedProduto);
+                document.getElementById('lista-produtos').style.display = 'none';
+                selectProdutos.value = ''; // Reinicia a seleção do dropdown
+            } else {
+                alert('Por favor, selecione um produto.');
+            }
+        });
+
+    </script>
+
+
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const menuContent = document.getElementById('menuContent');
+
+        menuButton.addEventListener('click', function () {
+            // Alterna a visibilidade do menu ao clicar no botão
+            menuContent.classList.toggle('menuContentVisible');
+        });
+    </script>
+
+    </ul>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
