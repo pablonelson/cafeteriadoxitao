@@ -23,6 +23,31 @@
       border: 1px solid dotted white;
     }
 
+
+    .dropdown {
+      /*dropdow = Suspende o menú  */
+      position: relative;
+      display: inline-block;
+      width: 5%;
+
+    }
+
+    .dropdown-content {
+      /*dropdow = Suspende o menú  */
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 15px 17px;
+      z-index: 5;
+    }
+
+    .dropdown:hover .dropdown-content {
+      /*dropdow = Suspende o menú. Hover = Passa o Mouse */
+      display: block;
+    }
+
     .coffee {
       color: #f8f3f1;
       font-family: Georgia, 'Times New Roman', Times, serif;
@@ -50,29 +75,41 @@
       align-items: center;
     }
 
-    .bt{
+    .bt {
       background-color: brown;
     }
 
 
+    .botao-TerceiraFont {
+      background-color: #0cd2e0;
+      color: rgb(12, 11, 11);
+    }
+    
   </style>
 
   <h1 class="cafe">ㅤㅤㅤㅤㅤㅤㅤㅤㅤ&#9749; Cafeteria do xitaozinho &#9749; </h1>
 
-  <form action="http://127.0.0.1:5500/index.html">
-    <input type="submit" value="Home" />
-  </form>
-  
-  <form action="http://127.0.0.1:5500/menu%20copy.html">
-    <input type="submit" value="Menu de compra" />
-  </form>
-  
-  <form action="http://127.0.0.1:5500/Outro%20projeto/avaliaçoes.html">
-    <input type="submit" value="Ir para o menu de avaliação" />
-  </form>
+  <div class="barra-Primeirabarra">
+
+    <div class="dropdown-content"></div>
+
+    <form action="http://127.0.0.1:5501/index.html">
+      <input class="botao-TerceiraFont" type="submit" value="Home" />
+    </form>
+
+    <form action="http://127.0.0.1:5501/menu%20copy.html">
+      <input class="botao-TerceiraFont" type="submit" value="Pedidos " />
+    </form>
+
+    <form action="http://127.0.0.1:5501/Compras.html">
+      <input class="botao-TerceiraFont" type="submit" value="Faça sua compra" />
+    </form>
+  </div>
+  </div>
+  </div>
 
   <h1 class="coffee">
-    <p class="for"> &#9749; O seu dia é mais feliz aqui na nossa cafeteria, venha nos conhecer e ter um dia mais alegre! 
+    <p class="for"> &#9749; O seu dia é mais feliz aqui na nossa cafeteria, venha nos conhecer e ter um dia mais alegre!
       &#9749;
   </h1>
 
@@ -131,7 +168,8 @@
   </div>
 
   <h2 class="coffee">
-    <p class="for"> O criador desse site simples, sou eu Pablo Nelson Santos Santana, estudo GTI na Univeritas em Itaqua,
+    <p class="for"> O criador desse site simples, sou eu Pablo Nelson Santos Santana, estudo GTI na Univeritas em
+      Itaqua,
       uma boa faculdade com ótimos professores, agradeço a todos vocês de coração...
   </h2>
 
