@@ -205,18 +205,10 @@
       /*dropdow = Suspende o menú. Hover = Passa o Mouse */
       display: block;
     }
-
     .barra {
+      display: flex;
 
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      width: 100%;
-      background-color: #fcf6f600;
-      color: #f5f1f100;
-      font-size: 25px;
     }
-
 
     .barra-Primeirabarra {
 
@@ -242,8 +234,8 @@
 
     .botao {
       padding: 10px 25px;
-      background-color: #080808;
-      color: rgb(238, 14, 14);
+      background-color: #0cd2e0;
+      color:rgb(12, 11, 11);
       text-decoration: double;
       border-radius: 15px;
       margin: 80 10px;
@@ -257,10 +249,37 @@
       color: rgb(238, 14, 14);
     }
 
+    
     .botao-TerceiraFont {
       background-color: #0cd2e0;
       color: rgb(12, 11, 11);
-    }
+      width: 130px;
+      height: 60px;
+      border-radius: 25px;
+    } 
+    .botao-QuartaFont {
+      background-color: #0cd2e0;
+      color: rgb(12, 11, 11);
+      width: 70px;
+      height: 60px;
+      border-radius: 25px;
+    } 
+
+    .botao-QuintaFont {
+      background-color: #0cd2e0;
+      color: rgb(12, 11, 11);
+      width: 70px;
+      height: 60px;
+      border-radius: 45px;
+    } 
+
+    .botao-sextaFont {
+      background-color: #e7ecec;
+      width: 70px;
+      height: 60px;
+      border-radius: 45px;
+      
+    } 
 
     .container {
       display: flex;
@@ -312,9 +331,8 @@
 
 
 
-
 <div class="barra-Primeirabarra">
-
+  <div class="barra">
   <div class="dropdown-content"></div>
 
   <form action="http://127.0.0.1:5501/Home.html">
@@ -423,7 +441,7 @@
               </tr>
 
               <tr>
-                <td class="for">2°X Churrasco com vinagrete</td>
+                <td class="for">2° X-Churrasco com vinagrete</td>
                 <td class="for">R$ 6,00</td>
               </tr>
 
@@ -479,11 +497,11 @@
   </script>
 
   <div class="navbar">
-
+    <div class="dropdown-content"></div>
     <div class="barra">
       <div id="lista-produtos"></div>
-      <button class="botao-SegundaFont" id="botao-produtos">Escolher Produto&#9749;</button>
-      <select id="select-produtos">
+      <button class="botao-sextaFont" id="botao-produtos">Escolher Produto&#9749;</button>
+      <select class="botao-sextaFont" id="select-produtos">
         <option value="">Selecione...</option><br>
         <option class="cafe" value="Cardápio de Cafés">Cardápio de Cafés</option>
         <option class="estilodeTexto" value="1°Café">1°Café</option>
@@ -508,7 +526,7 @@
 
         <!-- Adicione mais opções de produtos aqui -->
       </select>
-      <button id="botao-confirmar">Confirmar</button>
+      <button class="botao-sextaFont" id="botao-confirmar">Confirmar</button>
     </div>
   </div>
   </div>
