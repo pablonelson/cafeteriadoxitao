@@ -195,7 +195,7 @@ text-shadow: 2px 2px 4px rgb(253, 250, 250);
 
   <div class="barra-Primeirabarra">
     <div class="barra">
-      <div class="buttom"></div>
+      
       <div class="dropdown-content"></div>
 
       <form action="file:///C:/Users/Aluno-24/Desktop/PabloCode/index.html">
@@ -374,16 +374,18 @@ text-shadow: 2px 2px 4px rgb(253, 250, 250);
 
 
   <script src="script.js">
-
-// Função para realizar ajustes adicionais em telas menores (se necessário)
-function ajustarTela() {
-    // Coloque aqui qualquer código JavaScript que precise ser executado para ajustar a tela
-    // por exemplo, se você tiver elementos que precisam ser redimensionados ou ocultados em telas menores.
+// Função para alterar o texto do botão ao ser clicado
+function alterarTextoBotao() {
+    var button = document.getElementById('responsive-button');
+    if (button.innerHTML === 'Clique Aqui') {
+        button.innerHTML = 'Botão Clicado!';
+    } else {
+        button.innerHTML = 'Clique Aqui';
+    }
 }
 
-// Verifica o tamanho da tela ao carregar a página e quando a tela é redimensionada
-window.addEventListener('load', ajustarTela);
-window.addEventListener('resize', ajustarTela);
+// Adiciona um evento de clique ao botão para chamar a função alterarTextoBotao()
+document.getElementById('responsive-button').addEventListener('click', alterarTextoBotao);
 
 
   </script>
