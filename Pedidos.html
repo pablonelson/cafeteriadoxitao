@@ -28,13 +28,13 @@
 
 
     .for {
-      color: #f30d0d;
+      color: #ff7b00;
       border-style: double;
       height: 25%;
       width: 50%;
       font-size: 20px 60px;
       box-shadow: 5px 6px 7px rgba(6, 149, 245, 0.5);
-      border-color: rgba(14, 104, 107, 0.945);
+      border-color: rgba(248, 252, 252, 0.945);
       border-width: medium;
       font-style: oblique;
       font-size: 30px;
@@ -205,6 +205,7 @@
       /*dropdow = Suspende o menú. Hover = Passa o Mouse */
       display: block;
     }
+
     .barra {
       display: flex;
 
@@ -234,8 +235,8 @@
 
     .botao {
       padding: 10px 25px;
-      background-color: #0cd2e0;
-      color:rgb(12, 11, 11);
+      background-color: #030303;
+      color: rgb(248, 117, 10);
       text-decoration: double;
       border-radius: 15px;
       margin: 80 10px;
@@ -249,37 +250,43 @@
       color: rgb(238, 14, 14);
     }
 
-    
     .botao-TerceiraFont {
-      background-color: #0cd2e0;
-      color: rgb(12, 11, 11);
+      background-color: #0f0f0f;
+      font-size: 65%;
+      color: rgb(248, 126, 12);
+      text-shadow: #f9f9f9;
       width: 130px;
-      height: 60px;
-      border-radius: 25px;
-    } 
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 130px;
+    }
+
     .botao-QuartaFont {
       background-color: #0cd2e0;
       color: rgb(12, 11, 11);
       width: 70px;
       height: 60px;
       border-radius: 25px;
-    } 
+    }
 
     .botao-QuintaFont {
       background-color: #0cd2e0;
       color: rgb(12, 11, 11);
       width: 70px;
-      height: 60px;
+      height: 15px;
       border-radius: 45px;
-    } 
+    }
 
     .botao-sextaFont {
-      background-color: #e7ecec;
-      width: 70px;
-      height: 60px;
-      border-radius: 45px;
-      
-    } 
+      background-color: #070707;
+      color: #f07706;
+      width: 85px;
+      height: 65px;
+      border-radius: 130px;
+
+    }
 
     .container {
       display: flex;
@@ -330,24 +337,21 @@
   </style>
 
 
-<div class="barra-Primeirabarra">
-  <div class="barra">
-    <div class="dropdown-content"></div>
+  <div class="barra-Primeirabarra">
+    <div class="barra">
+      <div class="dropdown-content"></div>
 
-    <form action="http://127.0.0.1:5501/index.html">
-      <input class="botao-TerceiraFont" type="submit" value="Home" />
-    </form>
+      
+      <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/index.html?">Home</a>
 
-    <form action="http://127.0.0.1:5501/Pedidos.html">
-      <input class="botao-TerceiraFont" type="submit" value="Pedidos " />
-    </form>
+      <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Pedidos.html?">Pedidos</a>
 
-    <form action="http://127.0.0.1:5501/Fa%C3%A7asuaCompra.html">
-      <input class="botao-TerceiraFont" type="submit" value="Faça sua compra" />
-    </form>
+      <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Fa%C3%A7asuaCompra.html?">Faça suas Compras</a>
+
+
+    </div>
   </div>
-</div>
-</div>
+  </div>
 
 
   <div class="navbar">

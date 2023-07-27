@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Formulário de Compras</title>
 </head>
+
 <body>
 
-<style>
+  <style>
+    body {
+      background-image: url(imagens/compra1.jpg);
 
-  body{
-background-image: url(imagens/compra1.jpg);
+    }
 
-  }
-
-  .barra {
+    .barra {
       display: flex;
     }
-  
+
     .botao-TerceiraFont {
-      background-color: #0cd2e0;
-      color: rgb(12, 11, 11);
+      background-color: #0f0f0f;
+      color: rgb(248, 126, 12);
+      text-shadow: #f9f9f9;
       width: 130px;
-      height: 60px;
-      border-radius: 25px;
-    } 
-
-.imagens {
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 130px;
+    }
+    .imagens {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .texto1{
+    .texto1 {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .estilo1{
+    .estilo1 {
       color: #fcfbfb;
       font-size: 25px;
       border-style: double;
@@ -46,34 +50,32 @@ background-image: url(imagens/compra1.jpg);
       font-style: oblique;
       text-shadow: 1px 1px 2px rgb(12, 12, 12);
     }
-
-</style>
+  </style>
 
   <div class="barra">
 
-    <form action="http://127.0.0.1:5501/index.html">
-      <input class="botao-TerceiraFont" type="submit" value="Home" />
-    </form>
+   
+    <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/index.html?">Home</a>
 
-    <form action="http://127.0.0.1:5501/Pedidos.html">
-      <input class="botao-TerceiraFont" type="submit" value="Pedidos " />
-    </form>
+    <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Pedidos.html?">Pedidos</a>
 
-    <form action="http://127.0.0.1:5501/Fa%C3%A7asuaCompra.html">
-      <input class="botao-TerceiraFont" type="submit" value="Faça sua compra" />
-    </form>
+    <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Fa%C3%A7asuaCompra.html?">Faça suas Compras</a>
+
+
   </div>
-</div>
-</div>
+  </div>
+  </div>
 
-<div class="texto1">
-  <div class="estilo1">
-  <h1>Dados para Realizar a Compra</h1>
-</div>
-</div>
+  <div class="texto1">
+    <div class="estilo1">
+      <h1>Dados para Realizar a Compra</h1>
+    </div>
+  </div>
 
   <div class="imagens">
-    <iframe src="https://forms.gle/vv7K9QsiTV5mTR159" width="1000" height="900" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    <iframe src="https://forms.gle/vv7K9QsiTV5mTR159" width="1000" height="900" frameborder="0" marginheight="0"
+      marginwidth="0">Carregando…</iframe>
   </div>
 </body>
+
 </html>
