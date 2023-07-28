@@ -1,14 +1,21 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="main.js">
+  <meta https-equiv="X-UA-compatible" content=""IE="Edge">
   <title> &#9749; CAFETERIA DO XITAOZINHO </title>
 </head>
 
 <body>
+
+  <script>
+    // Função para redirecionar para a página "pedidos.html"
+    function redirecionarParaPedidos() {
+      window.location.href = "Pedidos.html";
+    }
+  </script>
+
 
   <style>
     body {
@@ -21,20 +28,6 @@
       margin: 0 auto;
     }
 
-    @media screen and (max-width: 600px) {
-      body {
-        font-size: 14px;
-        max-width: 100%;
-        padding: 10px;
-      }
-
-      .buttom {
-        font-size: 14px;
-        max-width: 100%;
-        padding: 10px;
-
-      }
-    }
 
     .cafe {
       color: #b67947;
@@ -204,11 +197,17 @@
       <div class="barra">
         <div class="dropdown-content"></div>
 
-        <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/index.html?">Home</a>
+        <form action="http://127.0.0.1:5501/index.html">
+          <input class="botao-TerceiraFont" type="submit" value="Home" />
+        </form>
 
-        <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Pedidos.html?">Pedidos</a>
-
-        <a class="botao-TerceiraFont" href="http://127.0.0.1:5501/Fa%C3%A7asuaCompra.html?">Faça suas Compras</a>
+        <form onclick="redirecionarParaPedidos()"; action="http://127.0.0.1:5501/Pedidos.html">
+          <input class="botao-TerceiraFont" type="submit" value="Pedidos " />
+        </form>
+    
+        <form action="http://127.0.0.1:5501/FaçasuaCompra.html">
+      <input class="botao-TerceiraFont" type="submit" value="Faça sua compra" />
+    </form>
 
         </form>
       </div>
@@ -401,7 +400,6 @@
 
   </h1>
 
-
   <script src="script.js">
     // Função para alterar o texto do botão ao ser clicado
     function alterarTextoBotao() {
@@ -416,7 +414,7 @@
     // Adiciona um evento de clique ao botão para chamar a função alterarTextoBotao()
     document.getElementById('responsive-button').addEventListener('click', alterarTextoBotao);
 
-
+    
   </script>
 </body>
 
