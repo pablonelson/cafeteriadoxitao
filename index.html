@@ -9,13 +9,6 @@
 
 <body>
 
-  <script>
-    // Função para redirecionar para a página "pedidos.html"
-    function redirecionarParaPedidos() {
-      window.location.href = "Pedidos.html";
-    }
-  </script>
-
   <style>
     body {
       background-image: url(imagens/fundo1.jpg);
@@ -196,15 +189,15 @@
       <div class="barra">
         <div class="dropdown-content"></div>
 
-        <form action="http://127.0.0.1:5501/index.html">
+        <form action="http://127.0.0.1:5501/index.html" method="GET">
           <input class="botao-TerceiraFont" type="submit" value="Home" />
         </form>
 
-        <form onclick="redirecionarParaPedidos()"; action="http://127.0.0.1:5501/Pedidos.html">
+        <form action="http://127.0.0.1:5501/Pedidos.html" method="GET">
           <input class="botao-TerceiraFont" type="submit" value="Pedidos " />
         </form>
     
-        <form action="http://127.0.0.1:5501/FaçasuaCompra.html">
+        <form action="http://127.0.0.1:5501/FaçasuaCompra.html"  method="GET">
       <input class="botao-TerceiraFont" type="submit" value="Faça sua compra" />
     </form>
 
@@ -291,7 +284,7 @@
             imersão em
             uma boa leitura, criando um espaço ideal para relaxar e viajar por mundos literários.<br>
 
-            
+
             <br>No primeiro andar temos a Livraria,e subindo as escadas para o segundo andar terá a Sala de Jogos, onde
             a
             diversão é garantida. Equipada com jogos de tabuleiro,
