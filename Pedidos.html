@@ -13,9 +13,8 @@
       background-image: url(imagens/frente7.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-      display: flex;
-      align-items: flex-start;
-
+      display:inline-flex;
+      align-items:flex-start;
     }
 
     .coffee {
@@ -213,8 +212,7 @@
 
     .barra-Primeirabarra {
 
-
-      height: 90px;
+      height: 0px;
       width: 27%;
       opacity: 0px;
       background-color: #f8f8f800;
@@ -240,7 +238,6 @@
       text-decoration: double;
       border-radius: 15px;
       margin: 80 10px;
-      text-align: center;
     }
 
 
@@ -306,7 +303,6 @@
       margin-bottom: 0px;
     }
 
-
     .navbar {
 
       height: 10px;
@@ -342,11 +338,11 @@
       <div class="dropdown-content"></div>
 
       
-      <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
+      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
 
-      <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
+      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
     
-      <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
+      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
     
     </div>
   </div>
@@ -538,33 +534,25 @@
 
 
   <script>
+// Função para ajustar o layout quando a tela é redimensionada ou carregada
+function ajustarTela() {
+    // Obter a largura da tela
+    var larguraTela = window.innerWidth || document.documentElement.clientWidth;
 
-    function showMenu(menuId) {
-      var menu = document.getElementById(menuId);
-      if (menu.style.display === "none") {
-        menu.style.display = "block";
-      } else {
-        menu.style.display = "none";
-      }
+    // Se a largura da tela for menor ou igual a 600 pixels (ou qualquer outro valor que você desejar)
+    if (larguraTela <= 600) {
+        // Adicione aqui os ajustes que deseja fazer no layout para dispositivos móveis
+        // Por exemplo, você pode ocultar certos elementos, alterar tamanhos de fonte, etc.
+        document.body.style.fontSize = "14px"; // Exemplo de ajuste na fonte
+    } else {
+        // Reverta os ajustes se a largura da tela for maior que 600 pixels (ou o valor escolhido)
+        document.body.style.fontSize = "16px"; // Voltando ao tamanho de fonte padrão
     }
+}
 
-    function conectarbotao() {
-      var botao1 =
-        document.getElementById("botao1");
-      var botao2 =
-        document.getElementById("botao2");
-
-      botao1.addEventListener("click", function () {
-        botao2.innerHTML = botao1.innerHTML;
-      });
-    }
-
-    function selecionarConteudo(botaold) {
-      var botao =
-        document.getElementById(botaold);
-      var conteúdo = botao.innerHTML;
-      alert("Conteúdo do botão" + botaold + ":" + conteudo);
-    }
+// Chame a função ao carregar a página e quando a tela é redimensionada
+window.addEventListener('load', ajustarTela);
+window.addEventListener('resize', ajustarTela);
 
   </script>
 

@@ -19,7 +19,22 @@
       max-width: 800px;
       margin: 0 auto;
     }
+/* Estilos padrão para o site em telas grandes */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+/* Media query para ajustar estilos em telas menores (celulares) */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+        max-width: 100%;
+        padding: 10px;
+    }
+}
 
     .cafe {
       color: #b67947;
@@ -189,11 +204,11 @@
       <div class="barra">
         <div class="dropdown-content"></div>
 
-        <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
+        <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
 
-        <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
+        <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
       
-        <a class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
+        <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
       
         </form>
         </form>
@@ -384,8 +399,21 @@
             só a Cafeteria do Xitãozinho pode oferecer. Não perca essa oportunidade de viver o verdadeiro prazer do
             café. Nos
             vemos em breve!
-
   </h1>
+
+  <script src="script.js">
+
+// Função para realizar ajustes adicionais em telas menores (se necessário)
+function ajustarTela() {
+    // Coloque aqui qualquer código JavaScript que precise ser executado para ajustar a tela
+    // por exemplo, se você tiver elementos que precisam ser redimensionados ou ocultados em telas menores.
+}
+
+// Verifica o tamanho da tela ao carregar a página e quando a tela é redimensionada
+window.addEventListener('load', ajustarTela);
+window.addEventListener('resize', ajustarTela);
+
+  </script>
 
   <script src="script.js">
     // Função para alterar o texto do botão ao ser clicado
@@ -400,9 +428,8 @@
 
     // Adiciona um evento de clique ao botão para chamar a função alterarTextoBotao()
     document.getElementById('responsive-button').addEventListener('click', alterarTextoBotao);
-
-    
   </script>
+
 </body>
 
 </html>
