@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> &#9749; Pedidos</title>
+</head>
+
+<body>
+  <style>
+    body {
+      background-image: url(imagens/frente7.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display:inline-flex;
+      align-items:flex-start;
+    }
+
+    .coffee {
+      color: #eb0606;
+      font-family: Georgia, 'arial', Times, serif;
+      font-size: 35px;
+      text-shadow: 2px 2px 4px rgba(42, 196, 4, 0.959);
+      border-color: rgba(14, 107, 71, 0.945);
+    }
+
+
+    .for {
+      color: #ff7b00;
+      border-style: double;
+      height: 25%;
+      width: 50%;
+      font-size: 20px 60px;
+      box-shadow: 5px 6px 7px rgba(6, 149, 245, 0.5);
+      border-color: rgba(248, 252, 252, 0.945);
+      border-width: medium;
+      font-style: oblique;
+      font-size: 30px;
+      text-shadow: 1px 1px 2px rgb(238, 234, 229);
+    }
+
+    .bebidaePreco {
+      color: #eb4f06;
+      font-size: 45px;
+      border-style: double;
+      box-shadow: 5px 6px 7px rgba(8, 168, 231, 0.5);
+      border-color: rgba(6, 84, 116, 0.945);
+      border-width: medium;
+      font-style: oblique;
+      font-size: 25px;
+      text-shadow: 1px 1px 2px rgb(240, 141, 12);
+    }
+
+    .bebidaePreco-SegundaFont {
+      color: #146bdd;
+      font-size: 45px;
+      border-style: double;
+      box-shadow: 5px 6px 7px rgba(8, 168, 231, 0.5);
+      border-color: rgba(6, 84, 116, 0.945);
+      border-width: medium;
+      font-style: oblique;
+      font-size: 40px;
+      text-shadow: 1px 1px 2px rgb(248, 236, 235);
+    }
+
+    .container {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container-parte2 {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+
+    .menu-container {
+      display: flex;
+      top: 150%;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .menu h2 {
+      margin-bottom: 10px;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu li {
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+
+      text-align: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .button {
+      padding: 30px 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0%;
+    }
+
+
+    .menu h2 {
+      margin-bottom: 1;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 1;
+    }
+
+    .menu li {
+      margin-bottom: 1px;
+    }
+
+    .cafe {
+      color: #47b8b2;
+      text-shadow: 1px 1px 2px rgb(207, 202, 202);
+      font-family: Georgia, 'arial', Times, serif;
+      font-size: 30px;
+      border-style: double;
+      box-shadow: 5px 6px 7px rgba(16, 17, 17, 0.5);
+      border-color: rgba(5, 5, 5, 0.945);
+    }
+
+    .imagens {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+    .dropdown {
+      /*dropdow = Suspende o menú  */
+      position: relative;
+      display: inline-block;
+      width: 5%;
+
+    }
+
+    .dropdown-content {
+      /*dropdow = Suspende o menú  */
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 15px 17px;
+      z-index: 5;
+    }
+
+    .dropdown:hover .dropdown-content {
+      /*dropdow = Suspende o menú. Hover = Passa o Mouse */
+      display: block;
+    }
+    .barra {
+      display: flex;
+
+    }
+
+    .barra-Primeirabarra {
+
+      height: 0px;
+      width: 27%;
+      opacity: 0px;
+      background-color: #f8f8f800;
+      color: #f8f2f200;
+      font-size: 25px;
+    }
+
+    .estilodeTexto {
+      font-size: 20px;
+
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .botao {
+      padding: 10px 25px;
+      background-color: #030303;
+      color: rgb(248, 117, 10);
+      text-decoration: double;
+      border-radius: 15px;
+      margin: 80 10px;
+    }
+
+
+    .botao-SegundaFont {
+
+      background-color: #080808;
+      color: rgb(238, 14, 14);
+    }
+
+    .botao-TerceiraFont {
+      background-color: #0f0f0f;
+      font-size: 65%;
+      color: rgb(248, 126, 12);
+      text-shadow: #f9f9f9;
+      width: 130px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 130px;
+    }
+
+    .botao-QuartaFont {
+      background-color: #0cd2e0;
+      color: rgb(12, 11, 11);
+      width: 70px;
+      height: 60px;
+      border-radius: 25px;
+    }
+
+    .botao-QuintaFont {
+      background-color: #0cd2e0;
+      color: rgb(12, 11, 11);
+      width: 70px;
+      height: 15px;
+      border-radius: 45px;
+    }
+
+    .botao-sextaFont {
+      background-color: #070707;
+      color: #f07706;
+      width: 85px;
+      height: 65px;
+      border-radius: 130px;
+
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .formulario {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .resultado {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0px;
+    }
+
+    .navbar {
+
+      height: 10px;
+      display: flex;
+      width: 15%;
+      justify-content: flex-end;
+      padding: 0 50px;
+    }
+
+    .navbar-primeiroBotao {
+
+      height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0px 110px;
+    }
+
+    .navbar a {
+      color: #070707;
+      text-decoration: none;
+      margin-left: 50px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+
+  </style>
+
+
+  <div class="barra-Primeirabarra">
+    <div class="barra">
+      <div class="dropdown-content"></div>
+
+      
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
+
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
+    
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
+    
+    </div>
+  </div>
+  </div>
+
+
+  <div class="navbar">
+    <div class="container-parte2">
+      <div class="button-container">
+
+          <button id="meuBotao" class="botao" onclick="showMenu('cafeMenu')">Café</button>
+          <div id="cafeMenu" class="menu" style="display: none;">
+  
+          <p class="for">Cardápio de Lanches:</p>
+           <ul>
+
+            <table>
+
+              <tr>
+                <th class="bebidaePreco-SegundaFont">café</th>
+                <th class="bebidaePreco-SegundaFont">Preço</th>
+              </tr>
+              <tr>
+                <td class="for">1° Café</td>
+                <td class="for">R$ 3,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">2° Capuccino</td>
+                <td class="for">R$ 5,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">3° Café espresso</td>
+                <td class="for">R$ 2,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">4° Irish coffee</td>
+                <td class="for">R$ 6,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">5° Caffè latte</td>
+                <td class="for">R$ 5,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">6° Café macchiato</td>
+                <td class="for">R$ 5,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">7° Café mocha</td>
+                <td class="for">R$ 2,50</td>
+              </tr>
+
+
+              <tr>
+                <td class="for">8° Café duplo</td>
+                <td class="for">R$ 3,50</td>
+              </tr>
+
+
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="container-parte2">
+      <div class="button-container">
+
+
+        <button id="meuBotao" class="botao" onclick="showMenu('lanchesMenu')">Lanches</button>
+
+        <div id="lanchesMenu" class="menu" style="display: none;">
+          <p class="for">Cardápio de Lanches:</p>
+          <ul>
+
+            <table>
+
+              <tr>
+                <th class="bebidaePreco-SegundaFont">Lanche</th>
+                <th class="bebidaePreco-SegundaFont">Preço</th>
+              </tr>
+              <tr>
+                <td class="for">1°Beirute</td>
+                <td class="for">R$ 9,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">2° X-Churrasco com vinagrete</td>
+                <td class="for">R$ 6,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">3° X Caboquinho</td>
+                <td class="for">R$ 4,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">4°Cachorro-quente nordestino</td>
+                <td class="for">R$ 7,00</td>
+              </tr>
+
+              <tr>
+                <td class="for">5°Carne Louca</td>
+                <td class="for">R$ 5,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">6° Sanduíche de Pernil</td>
+                <td class="for">R$ 7,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">7° Sanduíche de Calabresa</td>
+                <td class="for">R$ 6,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">8° Batata frita grande</td>
+                <td class="for">R$ 8,50</td>
+              </tr>
+
+
+              <tr>
+                <td class="for">9° Batata frita média</td>
+                <td class="for">R$ 8,50</td>
+              </tr>
+
+              <tr>
+                <td class="for">10° Batata frita pequena</td>
+                <td class="for">R$ 6,70</td>
+              </tr>
+
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </script>
+
+  <div class="navbar">
+    <div class="dropdown-content"></div>
+    <div class="barra">
+      <div id="lista-produtos"></div>
+      <button class="botao-sextaFont" id="botao-produtos">Escolher Produto&#9749;</button>
+      <select class="botao-sextaFont" id="select-produtos">
+        <option value="">Selecione...</option><br>
+        <option class="cafe" value="Cardápio de Cafés">Cardápio de Cafés</option>
+        <option class="estilodeTexto" value="1°Café">1°Café</option>
+        <option class="estilodeTexto" value="2°Capuccino">2°Capuccino</option>
+        <option class="estilodeTexto" value="3°Café espresso">3°Café espresso</option>
+        <option class="estilodeTexto" value="4°Irish coffee">4°Irish coffee</option>
+        <option class="estilodeTexto" value="5°Caffè latte">5°Caffè latte</option>
+        <option class="estilodeTexto" value="6°Café macchiato">6°Café macchiato</option>
+        <option class="estilodeTexto" value="7°Café mocha">7°Café mocha</option>
+        <option class="estilodeTexto" value="8° Café duplo">8° Café duplo</option>
+        <option class="cafe" value="Escolha seu lanche">Cardápio de Lanches</option>
+        <option class="estilodeTexto" value="1°Beirute">1°Beirute</option>
+        <option class="estilodeTexto" value="2°X Churrasco com vinagrete">2°X Churrasco com vinagrete </option>
+        <option class="estilodeTexto" value="3°X Caboquinho">3°X Caboquinho</option>
+        <option class="estilodeTexto" value="4°Cachorro-quente nordestino">4°Cachorro-quente nordestino</option>
+        <option class="estilodeTexto" value="5°Carne Louca">5°Carne Louca</option>
+        <option class="estilodeTexto" value="6°Sanduíche de Pernil">6°Sanduíche de Pernil</option>
+        <option class="estilodeTexto" value="7°Sanduíche de Calabresa">7°Sanduíche de Calabresa</option>
+        <option class="estilodeTexto" value="8°Batata frita grande">8°Batata frita grande</option>
+        <option class="estilodeTexto" value="9°Batata frita média">9°Batata frita média</option>
+        <option class="estilodeTexto" value="10°Batata frita pequena">10°Batata frita pequena</option>
+
+        <!-- Adicione mais opções de produtos aqui -->
+      </select>
+      <button class="botao-sextaFont" id="botao-confirmar">Confirmar</button>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <script>
+  function showMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+
+  <script>
+    // Função para ajustar o layout quando a tela é redimensionada ou carregada
+    function ajustarTela() {
+        // Obter a largura da tela
+        var larguraTela = window.innerWidth || document.documentElement.clientWidth;
+    
+        // Se a largura da tela for menor ou igual a 600 pixels (ou qualquer outro valor que você desejar)
+        if (larguraTela <= 600) {
+            // Adicione aqui os ajustes que deseja fazer no layout para dispositivos móveis
+            // Por exemplo, você pode ocultar certos elementos, alterar tamanhos de fonte, etc.
+            document.body.style.fontSize = "14px"; // Exemplo de ajuste na fonte
+        } else {
+            // Reverta os ajustes se a largura da tela for maior que 600 pixels (ou o valor escolhido)
+            document.body.style.fontSize = "16px"; // Voltando ao tamanho de fonte padrão
+        }
+    }
+    
+    // Chame a função ao carregar a página e quando a tela é redimensionada
+    window.addEventListener('load', ajustarTela);
+    window.addEventListener('resize', ajustarTela);
+    
+      </script>
+    
+    
+      <script>
+        document.getElementById('botao-produtos').addEventListener('click', function () {
+          document.getElementById('lista-produtos').style.display = 'block';
+        });
+    
+        document.getElementById('botao-confirmar').addEventListener('click', function () {
+          var selectProdutos = document.getElementById('select-produtos');
+          var selectedProduto = selectProdutos.value;
+    
+          if (selectedProduto) {
+            alert('Produto selecionado: ' + selectedProduto);
+            document.getElementById('lista-produtos').style.display = 'none';
+            selectProdutos.value = ''; // Reinicia a seleção do dropdown
+          } else {
+            alert('Por favor, selecione um produto.');
+          }
+        });
+    
+      </script>
+    
+      </ul>
+      </div>
+      </div>
+      </div>
+    </body>
+    
+    </html>
