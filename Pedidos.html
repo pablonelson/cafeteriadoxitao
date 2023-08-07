@@ -181,6 +181,7 @@
       align-items: center;
     }
 
+    
     .dropdown {
       /*dropdow = Suspende o menú  */
       position: relative;
@@ -204,7 +205,6 @@
       /*dropdow = Suspende o menú. Hover = Passa o Mouse */
       display: block;
     }
-
     .barra {
       display: flex;
 
@@ -330,6 +330,8 @@
     .navbar a:hover {
       text-decoration: underline;
     }
+
+
   </style>
 
 
@@ -338,11 +340,11 @@
       <div class="dropdown-content"></div>
 
       
-      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//index.html">Home</a>
 
-      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//Pedidos.html">Pedidos</a>
     
-      <a id="responsive-button" class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
+      <a  class="botao-TerceiraFont" href="https://pablonelson.github.io/cafeteriadoxitao//FaçasuaCompra.html">Faça suas Compras</a>
     
     </div>
   </div>
@@ -353,13 +355,11 @@
     <div class="container-parte2">
       <div class="button-container">
 
-        <button id="meuBotao" class="botao" onclick="showMenu('cafeMenu')">Café</button>
-
-        <div id="cafeMenu" class="menu" style="display: none;">
-          <p class="content">
-          <h4 class="for">Cardápio de Cafés:</h4>
-          </p>
-          <ul>
+          <button id="meuBotao" class="botao" onclick="showMenu('cafeMenu')">Café</button>
+          <div id="cafeMenu" class="menu" style="display: none;">
+  
+          <p class="for">Cardápio de Lanches:</p>
+           <ul>
 
             <table>
 
@@ -413,7 +413,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <div class="navbar">
@@ -489,7 +488,6 @@
       </div>
     </div>
   </div>
-  </div>
 
 
   </script>
@@ -532,55 +530,61 @@
   </div>
   </div>
 
-
   <script>
-// Função para ajustar o layout quando a tela é redimensionada ou carregada
-function ajustarTela() {
-    // Obter a largura da tela
-    var larguraTela = window.innerWidth || document.documentElement.clientWidth;
-
-    // Se a largura da tela for menor ou igual a 600 pixels (ou qualquer outro valor que você desejar)
-    if (larguraTela <= 600) {
-        // Adicione aqui os ajustes que deseja fazer no layout para dispositivos móveis
-        // Por exemplo, você pode ocultar certos elementos, alterar tamanhos de fonte, etc.
-        document.body.style.fontSize = "14px"; // Exemplo de ajuste na fonte
-    } else {
-        // Reverta os ajustes se a largura da tela for maior que 600 pixels (ou o valor escolhido)
-        document.body.style.fontSize = "16px"; // Voltando ao tamanho de fonte padrão
-    }
+  function showMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
 }
-
-// Chame a função ao carregar a página e quando a tela é redimensionada
-window.addEventListener('load', ajustarTela);
-window.addEventListener('resize', ajustarTela);
-
-  </script>
-
+</script>
 
   <script>
-    document.getElementById('botao-produtos').addEventListener('click', function () {
-      document.getElementById('lista-produtos').style.display = 'block';
-    });
-
-    document.getElementById('botao-confirmar').addEventListener('click', function () {
-      var selectProdutos = document.getElementById('select-produtos');
-      var selectedProduto = selectProdutos.value;
-
-      if (selectedProduto) {
-        alert('Produto selecionado: ' + selectedProduto);
-        document.getElementById('lista-produtos').style.display = 'none';
-        selectProdutos.value = ''; // Reinicia a seleção do dropdown
-      } else {
-        alert('Por favor, selecione um produto.');
-      }
-    });
-
-  </script>
-
-  </ul>
-  </div>
-  </div>
-  </div>
-</body>
-
-</html>
+    // Função para ajustar o layout quando a tela é redimensionada ou carregada
+    function ajustarTela() {
+        // Obter a largura da tela
+        var larguraTela = window.innerWidth || document.documentElement.clientWidth;
+    
+        // Se a largura da tela for menor ou igual a 600 pixels (ou qualquer outro valor que você desejar)
+        if (larguraTela <= 600) {
+            // Adicione aqui os ajustes que deseja fazer no layout para dispositivos móveis
+            // Por exemplo, você pode ocultar certos elementos, alterar tamanhos de fonte, etc.
+            document.body.style.fontSize = "14px"; // Exemplo de ajuste na fonte
+        } else {
+            // Reverta os ajustes se a largura da tela for maior que 600 pixels (ou o valor escolhido)
+            document.body.style.fontSize = "16px"; // Voltando ao tamanho de fonte padrão
+        }
+    }
+    
+    // Chame a função ao carregar a página e quando a tela é redimensionada
+    window.addEventListener('load', ajustarTela);
+    window.addEventListener('resize', ajustarTela);
+    
+      </script>
+    
+    
+      <script>
+        document.getElementById('botao-produtos').addEventListener('click', function () {
+          document.getElementById('lista-produtos').style.display = 'block';
+        });
+    
+        document.getElementById('botao-confirmar').addEventListener('click', function () {
+          var selectProdutos = document.getElementById('select-produtos');
+          var selectedProduto = selectProdutos.value;
+    
+          if (selectedProduto) {
+            alert('Produto selecionado: ' + selectedProduto);
+            document.getElementById('lista-produtos').style.display = 'none';
+            selectProdutos.value = ''; // Reinicia a seleção do dropdown
+          } else {
+            alert('Por favor, selecione um produto.');
+          }
+        });
+    
+      </script>
+    
+      </ul>
+      </div>
+      </div>
+      </div>
+    </body>
+    
+    </html>
